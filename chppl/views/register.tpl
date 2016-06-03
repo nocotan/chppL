@@ -31,18 +31,19 @@
     <div class="container">
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label class="col-sm-2 control-label">GitHub URL</label>
-          <div class="col-sm-10">
-            <input type="url" class="form-control" placeholder="Your header-file URL on GitHub">
-          </div>
-        <div class="form-group">
-          <label class="col-sm-2 control-label">Description</label>
-          <div class="col-sm-10">
-            <textarea class="form-control" rows="3"></textarea>
+          <label class="col-xs-2 control-label">GitHub URL</label>
+          <div class="col-xs-5">
+            <input type="url" class="form-control" name="url" placeholder="Your header-file URL on GitHub - .h/.hpp">
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
+          <label class="col-xs-2 control-label">Description</label>
+          <div class="col-xs-5">
+            <textarea type="text" class="form-control" name="description" rows="3" placeholder="Overview or Usage"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-offset-2 col-xs-10">
             <button type="submit" class="btn btn-default">Register</button>
           </div>
         </div>

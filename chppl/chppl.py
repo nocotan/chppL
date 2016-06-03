@@ -2,7 +2,11 @@
 """chppL.
 package management system for C/C++
 """
+import chppl_data
+
 import os
+from bottle import get
+from bottle import request
 from bottle import route
 from bottle import run
 from bottle import static_file
@@ -29,9 +33,16 @@ def index():
     return template('index')
 
 
-@route('/register')
+@get('/register')
 def register():
     return template('register')
+
+
+@route('/register', method='POST')
+def do_register():
+    data = chppl_data.ChpplData()
+    data.set_url(request.forms.get("url"))
+    data.set_description(request.forms.get("description"))
 
 
 @route('/search')
@@ -44,4 +55,5 @@ def contact():
     return template('contact')
 
 
-run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)),
+    debug=True, reloader=True)
