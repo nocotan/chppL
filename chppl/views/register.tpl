@@ -29,7 +29,7 @@
 
     <h2>Register Libraries</h2>
     <div class="container">
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal" role="form" action="./result">
         <div class="form-group">
           <label class="col-xs-2 control-label">GitHub URL</label>
           <div class="col-xs-5">

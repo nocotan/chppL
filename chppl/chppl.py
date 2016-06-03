@@ -38,11 +38,12 @@ def register():
     return template('register')
 
 
-@route('/register', method='POST')
+@route('/result')
 def do_register():
     data = chppl_data.ChpplData()
-    data.set_url(request.forms.get("url"))
-    data.set_description(request.forms.get("description"))
+    data.set_url(str(request.params.get("url")))
+    data.set_description(str(request.params.get("description")))
+    return data.get_url()
 
 
 @route('/search')
