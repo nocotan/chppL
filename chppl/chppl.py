@@ -13,6 +13,7 @@ from bottle import TEMPLATE_PATH
 
 from chppl_data import ChpplData
 from chppl_result import ChpplResult
+from chppl_search import ChpplSearch
 
 
 VIEWS = os.path.abspath(os.path.join(os.path.dirname(__file__), 'views'))
@@ -66,7 +67,10 @@ def do_register():
 
 @route('/search')
 def search():
-    return template('search')
+    search = ChpplSearch()
+    search.search_all()
+    search_list = search.get_search_list()
+    return template('search', search_list=search_list)
 
 
 @route('/contact')

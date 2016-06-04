@@ -36,6 +36,10 @@ class ChpplDB:
         q2 = "VALUES ('{}', '{}', '{}', '{}');".format(url, name, creator, description)
         return "{} {}".format(q1, q2)
 
+    def select_all(self):
+        q = "SELECT * FROM libraries;"
+        return q
+
     def commit_db(self, conn, cur):
         conn.commit()
         cur.close()

@@ -23,5 +23,12 @@
         </ul>
       </div>
     </nav>
+    <div class="container">
+      <div class="list-group">
+        {% for item in search_list %}
+          <a href="#" class="list-group-item">{{ item }}</a>
+        {% endfor %}
+      </div>
+    </div>
   </body>
 </html>
