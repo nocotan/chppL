@@ -1,5 +1,6 @@
 # chppL
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)  
+[![Dependency Status](https://gemnasium.com/badges/github.com/nocotan/chppL.svg)](https://gemnasium.com/github.com/nocotan/chppL)
 
 C/C++ package manager for header only libraries
 
