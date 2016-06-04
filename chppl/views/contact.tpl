@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chppL</title>
-    <link href="css/bootstrap.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <div cladd="navbar-header">

@@ -25,14 +25,14 @@ def css_static(filename):
     return static_file(filename, root=STATIC+'/css')
 
 
-@route('/fonts/<filename>')
+@route('/static/fonts/<filename:path>')
 def fonts_static(filename):
-    return static_file(filename, root='static/fonts')
+    return static_file(filename, root=STATIC+'/fonts')
 
 
-@route('/js/<filename>')
+@route('/static/js/<filename:path>')
 def js_static(filename):
-    return static_file(filename, root='static/js')
+    return static_file(filename, root=STATIC+'/js')
 
 
 @route('/')
