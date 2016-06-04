@@ -10,6 +10,7 @@ from bottle import run
 from bottle import static_file
 from bottle import template
 from bottle import TEMPLATE_PATH
+from bottle import url
 
 
 VIEWS_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'views'))
@@ -17,24 +18,24 @@ VIEWS_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'views'))
 TEMPLATE_PATH.insert(0, VIEWS_PATH)
 
 
-@route('/css/<filename>')
-def css_static(filename):
-    return static_file(filename, root='static/css')
+@route('/css/:path#.+#', name='static/css')
+def css_static(path):
+    return static_file(path, root='static/css')
 
 
 @route('/fonts/<filename>')
 def fonts_static(filename):
-    return static_file(filename)
+    return static_file(filename, root='static/fonts')
 
 
 @route('/js/<filename>')
 def js_static(filename):
-    return static_file(filename)
+    return static_file(filename, root='static/js')
 
 
 @route('/')
 def index():
-    return template('index')
+    return template('index', get_url=url)
 
 
 @get('/register')
