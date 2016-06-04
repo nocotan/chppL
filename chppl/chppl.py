@@ -22,7 +22,7 @@ TEMPLATE_PATH.insert(0, STATIC)
 
 @route('/static/css/<filename:path>')
 def css_static(filename):
-    return static_file(filename, root='static/css')
+    return static_file(filename, root=STATIC+'/css')
 
 
 @route('/fonts/<filename>')
