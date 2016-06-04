@@ -21,7 +21,7 @@ class ChpplData:
         return self.__name
 
     def set_name(self, name):
-        self.__name == name
+        self.__name = name
 
     def get_description(self):
         return self.__description

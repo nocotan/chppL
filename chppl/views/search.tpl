@@ -24,10 +24,19 @@
       </div>
     </nav>
     <div class="container">
-      <div class="list-group">
-        {% for item in search_list %}
-          <a href="#" class="list-group-item">{{ item }}</a>
-        {% endfor %}
+      <div class="panel panel-default">
+        <div class="panel-heading">Libraries</div>
+          <div class="panel-body">
+            <div class="list-group">
+              {% for item in search_list %}
+                <a href={{item[0]}} class="list-group-item">
+                  <h4 class="list-group-item-heading">{{ item[1] }}/{{ item[2] }}</h4>
+                  <p class="list-group-item-text">{{ item[3] }}</p>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

@@ -24,7 +24,6 @@
       </div>
     </nav>
 
-    <h2>Register Libraries</h2>
     <div class="container">
       <form class="form-horizontal" role="form" action="./result">
         <div class="form-group">
