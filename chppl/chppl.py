@@ -4,23 +4,25 @@ package management system for C/C++
 """
 import os
 from bottle import get
+from bottle import jinja2_template as template
 from bottle import request
 from bottle import route
 from bottle import run
 from bottle import static_file
-from bottle import template
 from bottle import TEMPLATE_PATH
-from bottle import url
 
 
-VIEWS_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'views'))
+VIEWS = os.path.abspath(os.path.join(os.path.dirname(__file__), 'views'))
+STATIC = os.path.abspath(os.path.join(os.path.dirname(__file__), 'static'))
 
-TEMPLATE_PATH.insert(0, VIEWS_PATH)
+
+TEMPLATE_PATH.insert(0, VIEWS)
+TEMPLATE_PATH.insert(0, STATIC)
 
 
-@route('/css/:path#.+#', name='static/css')
-def css_static(path):
-    return static_file(path, root='static/css')
+@route('/static/css/<filename:path>')
+def css_static(filename):
+    return static_file(filename, root='static/css')
 
 
 @route('/fonts/<filename>')
@@ -35,7 +37,7 @@ def js_static(filename):
 
 @route('/')
 def index():
-    return template('index', get_url=url)
+    return template('index')
 
 
 @get('/register')
