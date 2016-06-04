@@ -32,8 +32,19 @@ class ChpplValidator:
             self.__msg_list.append(self.__URL_IS_NOT_GITHUB)
             return False
 
+    def is_header(self, url):
+        result = urlparse(unquote(str(url))).path
+        if len(str(result)) > 4:
+            if str(result)[-2:] == '.h' or str(result)[-4:] == '.hpp':
+                return True
+            else:
+                self.__msg_list.append(self.__URL_IS_NOT_VALID)
+        else:
+            self.__msg_list.append(self.__URL_IS_NOT_VALID)
+            return False
+
     def isInputedForm(self, param):
-        if param is not "":
+        if len(str(param)) != 0:
             return True
         else:
             self.__msg_list.append(self.__FORM_IS_BLANK)

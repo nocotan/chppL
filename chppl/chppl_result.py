@@ -24,9 +24,10 @@ class ChpplResult(ChpplData, ChpplValidator):
         validator = ChpplValidator()
         if validator.isExitURL(url) \
                 and validator.isGithubURL(url) \
-                and validator.isInputed(data.get_name()) \
-                and validator.isInputed(data.get_creator()) \
-                and validator.isInputed(data.get_description()):
+                and validator.isInputedForm(str(data.get_name())) \
+                and validator.isInputedForm(str(data.get_creator())) \
+                and validator.isInputedForm(str(data.get_description())) \
+                and validator.is_header(url):
             return "Success"
         else:
             return "Failed"
