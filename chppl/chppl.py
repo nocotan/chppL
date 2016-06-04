@@ -32,7 +32,7 @@ def js_static(filename):
 
 @route('/')
 def index():
-    return template('index')
+    return template('./views/index')
 
 
 @get('/register')
