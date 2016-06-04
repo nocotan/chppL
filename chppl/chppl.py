@@ -2,8 +2,6 @@
 """chppL.
 package management system for C/C++
 """
-import chppl_data
-
 import os
 from bottle import get
 from bottle import request
@@ -40,10 +38,7 @@ def register():
 
 @route('/result')
 def do_register():
-    data = chppl_data.ChpplData()
-    data.set_url(str(request.params.get("url")))
-    data.set_description(str(request.params.get("description")))
-    return data.get_url()
+    return (str(request.params.get("url")))
 
 
 @route('/search')
