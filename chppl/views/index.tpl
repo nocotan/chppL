@@ -27,8 +27,8 @@
     <div class="container theme-showcase" role="main">
       <div class="jumbotron">
         <h1>chppL</h1>
-        <p>This is a package management system fo C/C++.</p>
-        <p>It has focused on the header-only</p>
+        <p>This is a package management system for C/C++.</p>
+        <p>It has focused on the header-only, single file library.</p>
       </div>
     </div>
   </body>
