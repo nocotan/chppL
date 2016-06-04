@@ -35,3 +35,5 @@ class ChpplResult(ChpplData):
         cur = conn.cursor()
 
         cur.execute(query)
+
+        db.commit_db(conn, cur)

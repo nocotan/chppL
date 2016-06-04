@@ -60,6 +60,7 @@ def do_register():
     result = ChpplResult()
     result.set_data(data)
     result.execute_query()
+
     return template('result', result=result.check_data())
 
 

@@ -34,4 +34,9 @@ class ChpplDB:
         description = str(data.get_description())
         q1 = "INSERT INTO libraries(url, name, creator, description) "
         q2 = "VALUES ('{}', '{}', '{}', '{}');".format(url, name, creator, description)
-        return q1 + q2
+        return "{} {}".format(q1, q2)
+
+    def commit_db(self, conn, cur):
+        conn.commit()
+        cur.close()
+        conn.close()
