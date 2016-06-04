@@ -1,1 +1,1 @@
-web: python3 chppl/chppl.py
+web: python chppl/chppl.py
