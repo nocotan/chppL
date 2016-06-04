@@ -3,7 +3,6 @@
 package management system for C/C++
 """
 import os
-import urllib
 from bottle import get
 from bottle import jinja2_template as template
 from bottle import request
@@ -55,6 +54,7 @@ def do_register():
     data = ChpplData()
     data.set_url(str(request.params.get("url")))
     data.set_description(str(request.params.get("description")))
+    data.set_creator(str(request.params.get("creator")))
 
     result = ChpplResult()
     result.set_data(data)

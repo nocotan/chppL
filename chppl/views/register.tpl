@@ -34,6 +34,12 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="col-xs-2 control-label">Creator</label>
+          <div class="col-xs-5">
+            <input type="text" class="form-control" name="creator" placeholder="Creator name">
+          </div>
+        </div>
+        <div class="form-group">
           <label class="col-xs-2 control-label">Description</label>
           <div class="col-xs-5">
             <textarea type="text" class="form-control" name="description" rows="3" placeholder="Overview or Usage"></textarea>
