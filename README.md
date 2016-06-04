@@ -20,4 +20,11 @@ If you want to run local,
 
 ```$ git clone https://github.com/nocotan/chppL/```  
 ```$ cd chppl```  
-```$ python3 chppl.py```  
+```$ python3 chppl.py``` 
+
+##Requirements
+bottle==0.12.9  
+dj-database-url==0.4.1  
+Jinja2==2.8  
+psycopg2==2.6.1  
+urllib3==1.15.1
