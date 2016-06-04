@@ -12,6 +12,7 @@ from bottle import static_file
 from bottle import TEMPLATE_PATH
 
 from chppl_data import ChpplData
+from chppl_result import ChpplResult
 
 
 VIEWS = os.path.abspath(os.path.join(os.path.dirname(__file__), 'views'))
@@ -52,6 +53,9 @@ def do_register():
     data = ChpplData()
     data.set_url(str(request.params.get("url")))
     data.set_description(str(request.params.get("description")))
+
+    result = ChpplResult()
+    result.set_data(data)
 
 
 @route('/search')
