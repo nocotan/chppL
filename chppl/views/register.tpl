@@ -34,6 +34,12 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="col-xs-2 control-label">Library name</label>
+          <div class="col-xs-5">
+            <input type="name" class="form-control" name="name" placeholder="Your library name">
+          </div>
+        </div>
+        <div class="form-group">
           <label class="col-xs-2 control-label">Creator</label>
           <div class="col-xs-5">
             <input type="text" class="form-control" name="creator" placeholder="Creator name">

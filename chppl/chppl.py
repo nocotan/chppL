@@ -53,6 +53,7 @@ def do_register():
 
     data = ChpplData()
     data.set_url(str(request.params.get("url")))
+    data.set_name(str(request.params.get("name")))
     data.set_description(str(request.params.get("description")))
     data.set_creator(str(request.params.get("creator")))
 

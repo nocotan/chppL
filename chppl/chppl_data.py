@@ -7,6 +7,7 @@ created by @nocotan
 class ChpplData:
     def __init__(self):
         self.__url = ""
+        self.__name = ""
         self.__description = ""
         self.__creator = ""
 
@@ -15,6 +16,12 @@ class ChpplData:
 
     def set_url(self, url):
         self.__url = url
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name == name
 
     def get_description(self):
         return self.__description
