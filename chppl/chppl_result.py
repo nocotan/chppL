@@ -1,4 +1,4 @@
-"""chppL
+"""chppL.
 C/C++ package management system
 created by @nocotan
 """
@@ -8,17 +8,32 @@ from chppl_db import ChpplDB
 
 
 class ChpplResult(ChpplData, ChpplValidator):
+    """result of register
+    inheritence:
+      ChpplData,
+      ChpplValidator
+    """
     def __init__(self):
+        """initialize
+        @param: self.__data
+        """
         self.__data = ChpplData()
         ChpplValidator.__init__(self)
 
     def set_data(self, data):
+        """data setter"""
         self.__data = data
 
     def get_data(self):
+        """data getter
+        @return self.__data
+        """
         return self.__data
 
     def check_data(self):
+        """data chekker
+        @return: Success or Failed
+        """
         data = self.__data
         url = str(data.get_url())
         validator = ChpplValidator()
@@ -33,6 +48,7 @@ class ChpplResult(ChpplData, ChpplValidator):
             return "Failed"
 
     def execute_query(self):
+        """execute insert query"""
         data = self.__data
         db = ChpplDB()
         query = db.insert_db(data)

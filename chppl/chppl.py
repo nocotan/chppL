@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """chppL.
 package management system for C/C++
+created by @nocotan
 """
 import os
 from bottle import get
@@ -26,31 +27,42 @@ TEMPLATE_PATH.insert(0, STATIC)
 
 @route('/static/css/<filename:path>')
 def css_static(filename):
+    """css file path"""
     return static_file(filename, root=STATIC+'/css')
 
 
 @route('/static/fonts/<filename:path>')
 def fonts_static(filename):
+    """fonts file path"""
     return static_file(filename, root=STATIC+'/fonts')
 
 
 @route('/static/js/<filename:path>')
 def js_static(filename):
+    """js file path"""
     return static_file(filename, root=STATIC+'/js')
 
 
 @route('/')
 def index():
+    """index page"""
     return template('index')
 
 
 @get('/register')
 def register():
+    """register page"""
     return template('register')
 
 
 @route('/result')
 def do_register():
+    """do register
+    @param: url
+    @param: name
+    @param: description
+    @param: creator
+    """
 
     data = ChpplData()
     data.set_url(str(request.params.get("url")))
@@ -71,6 +83,9 @@ def do_register():
 
 @route('/search')
 def search():
+    """search page
+    @return: search_list
+    """
     search = ChpplSearch()
     search.search_all()
     search_list = search.get_search_list()
@@ -79,6 +94,7 @@ def search():
 
 @route('/contact')
 def contact():
+    """contact page"""
     return template('contact')
 
 
