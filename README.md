@@ -8,5 +8,8 @@ C/C++ package manager for header only libraries
 
 ===================================================================
 
-##Register
+##Register Library
 input your header file URL(only github), library name, creator name and description.
+
+##Install Library
+use [chppl-tool](https://github.com/nocotan/chppl-tool)
