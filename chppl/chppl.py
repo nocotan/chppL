@@ -13,22 +13,23 @@ from bottle import TEMPLATE_PATH
 
 
 VIEWS_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'views'))
+
 TEMPLATE_PATH.insert(0, VIEWS_PATH)
 
 
 @route('/css/<filename>')
 def css_static(filename):
-    return static_file(filename, root='./views/css')
+    return static_file(filename, root='static/css')
 
 
 @route('/fonts/<filename>')
 def fonts_static(filename):
-    return static_file(filename, root='./views/fonts')
+    return static_file(filename)
 
 
 @route('/js/<filename>')
 def js_static(filename):
-    return static_file(filename, root='./views/js')
+    return static_file(filename)
 
 
 @route('/')
