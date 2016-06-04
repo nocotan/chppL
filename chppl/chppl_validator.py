@@ -11,6 +11,7 @@ class ChpplValidator:
         self.__msg_list = []
         self.__URL_IS_NOT_VALID = "URL is not valid."
         self.__URL_IS_NOT_GITHUB = "URL is not Github."
+        self.__FORM_IS_BLANK = "Form is blank."
 
     def __del__(self):
         pass
@@ -30,3 +31,13 @@ class ChpplValidator:
         else:
             self.__msg_list.append(self.__URL_IS_NOT_GITHUB)
             return False
+
+    def isInputedForm(self, param):
+        if param is not "":
+            return True
+        else:
+            self.__msg_list.append(self.__FORM_IS_BLANK)
+            return False
+
+    def get_msg_list(self):
+        return self.__msg_list

@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -18,14 +18,26 @@
         <ul class="nav navbar-nav">
           <li><a href="./">Getting started</a></li>
           <li><a href="./register">Register libraries</a></li>
-          <li><a href="./search">Search libraries</a></li>
+          <li class="active"><a href="./search">Search libraries</a></li>
           <li><a href="./contact">Contact us</a><li>
         </ul>
       </div>
     </nav>
-    {{ result }}
-    {% for msg in msg_list %}
-      <li>{{ msg }}</li>
-    {% endfor %}
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">Libraries</div>
+          <div class="panel-body">
+            <div class="list-group">
+              {% for item in search_list %}
+                <a href={{item[0]}} class="list-group-item">
+                  <h4 class="list-group-item-heading">{{ item[1] }}/{{ item[2] }}</h4>
+                  <p class="list-group-item-text">{{ item[3] }}</p>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

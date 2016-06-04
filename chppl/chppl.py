@@ -60,9 +60,13 @@ def do_register():
 
     result = ChpplResult()
     result.set_data(data)
-    result.execute_query()
 
-    return template('result', result=result.check_data())
+    if result.check_data() is "Success":
+        result.execute_query()
+
+    msg_list = result.get_msg_list()
+
+    return template('result', result=result.check_data(), msg_list=msg_list)
 
 
 @route('/search')

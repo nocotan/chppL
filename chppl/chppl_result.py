@@ -7,9 +7,10 @@ from chppl_validator import ChpplValidator
 from chppl_db import ChpplDB
 
 
-class ChpplResult(ChpplData):
+class ChpplResult(ChpplData, ChpplValidator):
     def __init__(self):
         self.__data = ChpplData()
+        ChpplValidator.__init__(self)
 
     def set_data(self, data):
         self.__data = data
@@ -21,7 +22,11 @@ class ChpplResult(ChpplData):
         data = self.__data
         url = str(data.get_url())
         validator = ChpplValidator()
-        if validator.isExitURL(url) and validator.isGithubURL(url):
+        if validator.isExitURL(url) \
+                and validator.isGithubURL(url) \
+                and validator.isInputed(data.get_name()) \
+                and validator.isInputed(data.get_creator()) \
+                and validator.isInputed(data.get_description()):
             return "Success"
         else:
             return "Failed"
