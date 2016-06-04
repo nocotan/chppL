@@ -4,6 +4,7 @@ created by @nocotan
 """
 from chppl_data import ChpplData
 from chppl_validator import ChpplValidator
+from chppl_db import ChpplDB
 
 
 class ChpplResult(ChpplData):
@@ -24,3 +25,13 @@ class ChpplResult(ChpplData):
             return "Success"
         else:
             return "Failed"
+
+    def execute_query(self):
+        data = self.__data
+        db = ChpplDB()
+        query = db.insert_db(data)
+
+        conn = db.connect()
+        cur = conn.cursor()
+
+        cur.execute(query)

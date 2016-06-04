@@ -29,7 +29,7 @@ class ChpplData:
     def set_description(self, description):
         self.__description = description
 
-    def get_creator(self, creator):
+    def get_creator(self):
         return self.__creator
 
     def set_creator(self, creator):
