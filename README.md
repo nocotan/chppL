@@ -18,6 +18,6 @@ Use [chppl-tool](https://github.com/nocotan/chppl-tool)
 ##Running Local
 If you want to run local,
 
-```$ git clone https://github.com/nocotan/chppL/```
-```$ cd chppl```
-```$ python3 chppl.py```
+```$ git clone https://github.com/nocotan/chppL/```  
+```$ cd chppl```  
+```$ python3 chppl.py```  
