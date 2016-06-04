@@ -3,12 +3,16 @@
 package management system for C/C++
 """
 import os
+import bottle
 from bottle import get
 from bottle import request
 from bottle import route
 from bottle import run
 from bottle import static_file
 from bottle import template
+
+
+bottle.TEMPLATE_PATH.insert(0, '/views/')
 
 
 @route('/css/<filename>')
@@ -28,7 +32,7 @@ def js_static(filename):
 
 @route('/')
 def index():
-    return template('index.tpl')
+    return template('index')
 
 
 @get('/register')
