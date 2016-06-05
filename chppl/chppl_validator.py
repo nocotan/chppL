@@ -20,26 +20,18 @@ class ChpplValidator:
         self.__URL_IS_NOT_GITHUB = "URL is not Github."
         self.__FORM_IS_BLANK = "Form is blank."
 
-    def isExitURL(self, url):
-        """check url is exit or not
+    def is_valid_url(self, url):
+        """check url is valid or not
         @return: True or False
         """
-        result = urlparse(unquote(str(url))).scheme
-        if str(result) == 'http' or str(result) == 'https':
+        r1 = urlparse(unquote(str(url))).scheme
+        r2 = urlparse(unquote(str(url))).netloc
+        is_exit = str(r1) == 'http' or str(r1) == 'https'
+        is_git = str(r2) == 'github.com' or str(r2) == 'www.github.com'
+        if is_exit and is_git:
             return True
         else:
             self.__msg_list.append(self.__URL_IS_NOT_VALID)
-            return False
-
-    def isGithubURL(self, url):
-        """check url is github or not
-        @return: True or False
-        """
-        result = urlparse(unquote(str(url))).netloc
-        if str(result) == 'github.com' or str(result) == 'www.github.com':
-            return True
-        else:
-            self.__msg_list.append(self.__URL_IS_NOT_GITHUB)
             return False
 
     def is_header(self, url):
