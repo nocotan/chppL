@@ -36,13 +36,14 @@ class ChpplResult(ChpplData, ChpplValidator):
         """
         data = self.__data
         url = str(data.get_url())
-        validator = ChpplValidator()
-        if validator.isExitURL(url) \
-                and validator.isGithubURL(url) \
-                and validator.isInputedForm(str(data.get_name())) \
-                and validator.isInputedForm(str(data.get_creator())) \
-                and validator.isInputedForm(str(data.get_description())) \
-                and validator.is_header(url):
+        v = ChpplValidator()
+        is_git = v.isGithubURL(url)
+        is_blank1 = v.isInputedForm(str(data.get_name()))
+        is_blank2 = v.isInputedForm(str(data.get_creator()))
+        is_blank3 = v.isInputedForm(str(data.get_description()))
+        is_blank = is_blank1 and is_blank2 and is_blank3
+        is_header = v.is_header(url)
+        if is_git and is_blank and is_header:
             return "Success"
         else:
             return "Failed"
