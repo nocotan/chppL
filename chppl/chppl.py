@@ -25,22 +25,10 @@ TEMPLATE_PATH.insert(0, VIEWS)
 TEMPLATE_PATH.insert(0, STATIC)
 
 
-@route('/static/css/<filename:path>')
-def css_static(filename):
-    """css file path"""
-    return static_file(filename, root=STATIC+'/css')
-
-
-@route('/static/fonts/<filename:path>')
-def fonts_static(filename):
-    """fonts file path"""
-    return static_file(filename, root=STATIC+'/fonts')
-
-
-@route('/static/js/<filename:path>')
-def js_static(filename):
-    """js file path"""
-    return static_file(filename, root=STATIC+'/js')
+@route('/static/<filename:path>')
+def static(filename):
+    """static file path"""
+    return static_file(filename, root=STATIC)
 
 
 @route('/')
