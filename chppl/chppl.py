@@ -80,6 +80,12 @@ def search():
     return template('search', search_list=search_list)
 
 
+@route('/manage')
+def manage():
+    """manage page"""
+    return template('manage')
+
+
 @route('/contact')
 def contact():
     """contact page"""

@@ -18,27 +18,33 @@
         <ul class="nav navbar-nav">
           <li><a href="./">Getting started</a></li>
           <li><a href="./register">Register libraries</a></li>
-          <li class="active"><a href="./search">Search libraries</a></li>
-          <li><a href="./manage">Manage libraries</a></li>
+          <li><a href="./search">Search libraries</a></li>
+          <li class="active"><a href="./manage">Manage libraries</a></li>
           <li><a href="./contact">Contact us</a><li>
         </ul>
       </div>
     </nav>
+
     <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-heading">Libraries</div>
-          <div class="panel-body">
-            <div class="list-group">
-              {% for item in search_list %}
-                <a href={{item[0]}} class="list-group-item">
-                  <h4 class="list-group-item-heading">{{ item[1] }}/{{ item[2] }}</h4>
-                  <p class="list-group-item-text">{{ item[3] }}</p>
-                </a>
-              {% endfor %}
-            </div>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-xs-2">Delete package name</label>
+          <div class="col-xs-5">
+            <input type="text" name="package" class="form-control">
           </div>
         </div>
-      </div>
+        <div clasS="form-group">
+          <label class="control-label col-xs-2">Confirmation</label>
+          <div class="col-xs-5">
+            <input type="text" name="package" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-default">Delete</button>
+          </div>
+        </div>
+      </form>
     </div>
   </body>
 </html>

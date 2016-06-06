@@ -19,6 +19,7 @@
           <li class="active"><a href="./">Getting started</a></li>
           <li><a href="./register">Register libraries</a></li>
           <li><a href="./search">Search libraries</a></li>
+          <li><a href="./manage">Manage libraries</a></li>
           <li><a href="./contact">Contact us</a><li>
         </ul>
       </div>
