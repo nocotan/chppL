@@ -48,7 +48,7 @@ class ChpplValidator:
             self.__msg_list.append(self.__URL_IS_NOT_VALID)
             return False
 
-    def is_inputed_orm(self, param):
+    def is_inputed_form(self, param):
         """check form is blank or not.
         @return: True or False
         """
