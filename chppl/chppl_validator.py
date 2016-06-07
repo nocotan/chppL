@@ -48,8 +48,8 @@ class ChpplValidator:
             self.__msg_list.append(self.__URL_IS_NOT_VALID)
             return False
 
-    def is_inputedForm(self, param):
-        """check form is blank or not
+    def is_inputed_orm(self, param):
+        """check form is blank or not.
         @return: True or False
         """
         if len(str(param)) != 0:
@@ -59,7 +59,7 @@ class ChpplValidator:
             return False
 
     def validate_injection(self, param):
-        """check SQL injection
+        """check SQL injection.
         @return: True or False
         """
         if param.find("\'") > -1 or param.find("\"") > -1:
@@ -68,9 +68,11 @@ class ChpplValidator:
             return False
         elif param.find("<") > -1 or param.find(">") > -1:
             return False
+        elif param.find("*") > -1 or param.find("=") > -1:
+            return False
         else:
             return True
 
     def get_msg_list(self):
-        """msg list getter"""
+        """msg list getter."""
         return self.__msg_list

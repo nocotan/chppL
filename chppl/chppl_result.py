@@ -43,9 +43,9 @@ class ChpplResult(ChpplData, ChpplValidator):
         is_escape3 = v.validate_injection(data.get_name())
         is_escape4 = v.validate_injection(data.get_description())
         is_escape = is_escape1 and is_escape2 and is_escape3 and is_escape4
-        is_blank1 = v.is_inputedForm(str(data.get_name()))
-        is_blank2 = v.is_inputedForm(str(data.get_creator()))
-        is_blank3 = v.is_inputedForm(str(data.get_description()))
+        is_blank1 = v.is_inputed_form(str(data.get_name()))
+        is_blank2 = v.is_inputed_form(str(data.get_creator()))
+        is_blank3 = v.is_inputed_form(str(data.get_description()))
         is_blank = is_blank1 and is_blank2 and is_blank3
         print(is_blank)
         print(is_valid)
