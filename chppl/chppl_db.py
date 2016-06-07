@@ -34,7 +34,7 @@ class ChpplDB:
 
     def insert_db(self, data):
         """query insert db
-        @return query
+        @return: query
         """
         url = unquote(str(data.get_url()))
         name = str(data.get_name())
@@ -48,9 +48,17 @@ class ChpplDB:
 
     def select_all(self):
         """query select all db
-        @return query
+        @return: query
         """
         query = "SELECT * FROM libraries;"
+        return query
+
+    def delete_data(self, data):
+        """query delete data
+        @return: query
+        """
+        target = data.get_package()
+        query = "DELETE FROM libraries WHERE name = '{}';".format(target)
         return query
 
     def commit_db(self, conn, cur):

@@ -26,7 +26,7 @@
     </nav>
 
     <div class="container">
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="./manage_result">
         <div class="form-group">
           <label class="control-label col-xs-2">Delete package name</label>
           <div class="col-xs-5">
@@ -36,7 +36,7 @@
         <div clasS="form-group">
           <label class="control-label col-xs-2">Confirmation</label>
           <div class="col-xs-5">
-            <input type="text" name="package" class="form-control">
+            <input type="text" name="confilm" class="form-control">
           </div>
         </div>
         <div class="form-group">

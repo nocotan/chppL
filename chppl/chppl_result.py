@@ -37,12 +37,27 @@ class ChpplResult(ChpplData, ChpplValidator):
         data = self.__data
         url = str(data.get_url())
         v = ChpplValidator()
-        is_valid = v.is_valid(url) and v.is_header(url)
+        is_valid = v.is_valid_url(url) and v.is_header(url)
         is_blank1 = v.isInputedForm(str(data.get_name()))
         is_blank2 = v.isInputedForm(str(data.get_creator()))
         is_blank3 = v.isInputedForm(str(data.get_description()))
         is_blank = is_blank1 and is_blank2 and is_blank3
+        print(is_blank)
+        print(is_valid)
         if is_valid and is_blank:
+            return "Success"
+        else:
+            return "Failed"
+
+    def confilm_data(self):
+        """data confilm
+        @return: Success or Failed
+        """
+        data = self.__data
+        package = data.get_package()
+        confilm = data.get_confilm()
+
+        if package == confilm:
             return "Success"
         else:
             return "Failed"
@@ -58,4 +73,15 @@ class ChpplResult(ChpplData, ChpplValidator):
 
         cur.execute(query)
 
+        db.commit_db(conn, cur)
+
+    def delete_data(self):
+        """execute delete query"""
+        data = self.__data
+        db = ChpplDB()
+        query = db.delete_data(data)
+
+        conn = db.connect()
+        cur = conn.cursor()
+        cur.execute(query)
         db.commit_db(conn, cur)

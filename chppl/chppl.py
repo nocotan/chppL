@@ -86,6 +86,28 @@ def manage():
     return template('manage')
 
 
+@route('/manage_result')
+def to_delete():
+    """do delete
+    @param: package
+    @param: confilm
+    """
+
+    data = ChpplData()
+    data.set_package(str(request.params.get('package')))
+    data.set_confilm(str(request.params.get('confilm')))
+
+    result = ChpplResult()
+    result.set_data(data)
+
+    if result.confilm_data() is "Success":
+        result.delete_data()
+
+    msg_list = result.get_msg_list()
+
+    return template('result', result=result.confilm_data(), msg_list=msg_list)
+
+
 @route('/contact')
 def contact():
     """contact page"""
