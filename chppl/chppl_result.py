@@ -38,13 +38,18 @@ class ChpplResult(ChpplData, ChpplValidator):
         url = str(data.get_url())
         v = ChpplValidator()
         is_valid = v.is_valid_url(url) and v.is_header(url)
-        is_blank1 = v.isInputedForm(str(data.get_name()))
-        is_blank2 = v.isInputedForm(str(data.get_creator()))
-        is_blank3 = v.isInputedForm(str(data.get_description()))
+        is_escape1 = v.validate_injection(url)
+        is_escape2 = v.validate_injection(data.get_creator())
+        is_escape3 = v.validate_injection(data.get_name())
+        is_escape4 = v.validate_injection(data.get_description())
+        is_escape = is_escape1 and is_escape2 and is_escape3 and is_escape4
+        is_blank1 = v.is_inputedForm(str(data.get_name()))
+        is_blank2 = v.is_inputedForm(str(data.get_creator()))
+        is_blank3 = v.is_inputedForm(str(data.get_description()))
         is_blank = is_blank1 and is_blank2 and is_blank3
         print(is_blank)
         print(is_valid)
-        if is_valid and is_blank:
+        if is_valid and is_blank and is_escape:
             return "Success"
         else:
             return "Failed"
@@ -57,7 +62,12 @@ class ChpplResult(ChpplData, ChpplValidator):
         package = data.get_package()
         confilm = data.get_confilm()
 
-        if package == confilm:
+        v = ChpplValidator()
+        is_escape1 = v.validate_injection(package)
+        is_escape2 = v.validate_injection(confilm)
+        is_escape = is_escape1 and is_escape2
+
+        if package == confilm and is_escape:
             return "Success"
         else:
             return "Failed"

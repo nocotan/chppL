@@ -48,7 +48,7 @@ class ChpplValidator:
             self.__msg_list.append(self.__URL_IS_NOT_VALID)
             return False
 
-    def isInputedForm(self, param):
+    def is_inputedForm(self, param):
         """check form is blank or not
         @return: True or False
         """
@@ -57,6 +57,19 @@ class ChpplValidator:
         else:
             self.__msg_list.append(self.__FORM_IS_BLANK)
             return False
+
+    def validate_injection(self, param):
+        """check SQL injection
+        @return: True or False
+        """
+        if param.find("\'") > -1 or param.find("\"") > -1:
+            return False
+        elif param.find("\\") > -1:
+            return False
+        elif param.find("<") > -1 or param.find(">") > -1:
+            return False
+        else:
+            return True
 
     def get_msg_list(self):
         """msg list getter"""
