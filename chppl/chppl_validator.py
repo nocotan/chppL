@@ -70,6 +70,8 @@ class ChpplValidator:
             return False
         elif param.find("*") > -1 or param.find("=") > -1:
             return False
+        elif param.find("&") > -1:
+            return False
         else:
             return True
 
