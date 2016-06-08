@@ -23,11 +23,11 @@ class ChpplDB:
         url = urlparse(os.environ['DATABASE_URL'])
 
         conn = psycopg2.connect(
-                database=url.path[1:],
-                user=url.username,
-                password=url.password,
-                host=url.hostname,
-                port=url.port
+            database=url.path[1:],
+            user=url.username,
+            password=url.password,
+            host=url.hostname,
+            port=url.port
         )
 
         return conn
@@ -41,9 +41,9 @@ class ChpplDB:
         creator = str(data.get_creator())
         description = str(data.get_description())
         q1 = "INSERT INTO libraries(url, name, creator, description) "
-        q2 = "VALUES ('{}', '{}', '{}', '{}');".format(url, name,
-                                                       creator, description)
-        query = "{} {}".format(q1, q2)
+        q2 = "SELECT '{}', '{}', '{}', '{}'".format(url, name, creator, description)
+        q3 = "WHERE NOT EXISTS (SELECT 1 FROM libraries WHERE name = '{}');".format(name)
+        query = "{} {} {}".format(q1, q2, q3)
         return query
 
     def select_all(self):
