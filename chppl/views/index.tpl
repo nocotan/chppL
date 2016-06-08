@@ -30,10 +30,9 @@
         <h1>chppL</h1>
         <p>This is a package management system for C/C++.</p>
         <p>It has focused on the header-only, single file library.</p>
+        <p><small> - If your libraries consist of several files, you can register
+        them and write "dependet files" in description.</small></p>
       </div>
     </div>
-    <div>
-      <p>If your libraries consist of several files, you can register them and
-      write "dependet files" in description</p>
   </body>
 </html>
