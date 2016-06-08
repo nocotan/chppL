@@ -32,5 +32,8 @@
         <p>It has focused on the header-only, single file library.</p>
       </div>
     </div>
+    <div>
+      <p>If your libraries consist of several files, you can register them and
+      write "dependet files" in description</p>
   </body>
 </html>
