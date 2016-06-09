@@ -72,26 +72,18 @@ class ChpplResult(ChpplData, ChpplValidator):
         else:
             return "Failed"
 
-    def execute_query(self):
+    def execute_query(self, q):
         """execute insert query"""
         data = self.__data
         db = ChpplDB()
-        query = db.insert_db(data)
+        if q == "insert":
+            query = db.insert_db(data)
+        elif q == "delete":
+            query = db.delete_data(data)
 
         conn = db.connect()
         cur = conn.cursor()
 
         cur.execute(query)
 
-        db.commit_db(conn, cur)
-
-    def delete_data(self):
-        """execute delete query"""
-        data = self.__data
-        db = ChpplDB()
-        query = db.delete_data(data)
-
-        conn = db.connect()
-        cur = conn.cursor()
-        cur.execute(query)
         db.commit_db(conn, cur)

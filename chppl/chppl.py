@@ -62,7 +62,7 @@ def do_register():
     result.set_data(data)
 
     if result.check_data() is "Success":
-        result.execute_query()
+        result.execute_query("insert")
 
     msg_list = result.get_msg_list()
 
@@ -101,7 +101,7 @@ def to_delete():
     result.set_data(data)
 
     if result.confilm_data() is "Success":
-        result.delete_data()
+        result.execute_query("delete")
 
     msg_list = result.get_msg_list()
 
