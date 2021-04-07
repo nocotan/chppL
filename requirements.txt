@@ -1,4 +1,4 @@
-bottle==0.12.9
+bottle==0.12.19
 codeclimate-test-reporter==0.1.1
 dj-database-url==0.4.1
 Jinja2==2.8
